@@ -33,7 +33,7 @@
 ### Association
 
 - has_many :comments
-#jody：中間テーブル使用不用と思います＃
+### jody：中間テーブル使用不用と思います###
 
 
 ## comments テーブル
