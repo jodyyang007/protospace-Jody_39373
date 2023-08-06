@@ -10,5 +10,5 @@ class User < ApplicationRecord
          validates :profile, presence: true
          validates :occupation, presence: true
          validates :position, presence: true
-         validates :email, presence: true, uniqueness: false
+         validates :email, presence: true, uniqueness: false 
 end
