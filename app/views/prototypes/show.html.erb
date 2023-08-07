@@ -1,27 +1,19 @@
 <main class="main">
   <div class="inner">
     <div class="prototype__wrapper">
-        <p class="prototype__heading">
+      <p class="prototype__heading">
         <%= @prototype.title %>
-        </p>
-
-
+      </p>
       <%= link_to "by #{@prototype.user.name}", prototype_path(@prototype.user), class: :prototype__user %>
-
-      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
-      <% if user_signed_in? && current_user == @prototype.user %>
+      <% if current_user == @prototype.user%>
         <div class="prototype__manage">
           <%= link_to "編集する", edit_prototype_path(@prototype), class: :prototype__btn %>
           <%= link_to "削除する", prototype_path(@prototype), method: :delete, class: :prototype__btn, data: { confirm: "本当に削除しますか？" } %>
         </div>
       <% end %>
-      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
-
-   
       <div class="prototype__image">
-        <%= image_tag @prototype.image, class: :card__img %>
+        <%= image_tag @prototype.image %>
       </div>
-      
       <div class="prototype__body">
         <div class="prototype__detail">
           <p class="detail__title">キャッチコピー</p>
