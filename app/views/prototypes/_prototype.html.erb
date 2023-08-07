@@ -1,24 +1,10 @@
 <div class="card">
-  <%= link_to prototype_path(prototype) do %>
-    <% if prototype.image.attached? %>
-      <%= image_tag(prototype.image, class: :card__img) %>
-    <% else %>
-      <!-- 画像が存在しない場合の処理 -->
-      <%= "No Image Available" %>
-    <% end %>
-  <% end %>
-</div>
-
+  <%= link_to image_tag(prototype.image, class: :card__img ), prototype_path(prototype) %>
 <div class="card__body">
-  <%= link_to prototype.title, prototype_path(prototype), class: :card__title %>
-    
+    <%= link_to prototype.title, prototype_path(prototype), class: :card__title%>
   <p class="card__summary">
     <%= prototype.catch_copy %>
   </p>
-  <% if prototype.user %>
     <%= link_to "by #{prototype.user.name}", prototype_path(prototype.user), class: :card__user %>
-  <% else %>
-    <!-- ユーザーが存在しない場合の処理 -->
-    <%= "Unknown User" %>
-  <% end %>
+  </div>
 </div>
