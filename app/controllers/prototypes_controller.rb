@@ -16,10 +16,13 @@ class PrototypesController < ApplicationController
       render :new
     end
   end
-  
+
   def show
+    @comment = Comment.new
     @prototype = Prototype.find(params[:id])
+    @comments = @prototype.comments.includes(:user)
   end
+
 
   def edit
     @prototype = Prototype.find(params[:id])
